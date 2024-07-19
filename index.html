@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h2>Local storage Property</h2>
+    <button onclick="clickcounter()">Click Me</button>
+    <div id="demo"></div>
+    <p>Click button To increase the count</p>
+</div>
+    <script>
+        clickcounter(); 
+//The line clickcounter(); is called immediately when the script loads. This ensures that the current value of the click counter is displayed as soon as the page is loaded. Without this line, the div with id demo would be empty until the button is clicked for the first time.
+        function clickcounter()
+        {
+            if(localStorage.clickcounter){
+                localStorage.clickcounter=Number(localStorage.clickcounter)+1;
+            }
+            else{
+                localStorage.clickcounter=1;
+            }
+            document.getElementById("demo").innerHTML=localStorage.clickcounter;
+        }
+
+    </script>
+    
+</body>
+</html>
